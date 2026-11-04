@@ -838,7 +838,7 @@ $roofTypeName = match ($calc['roof_type'] ?? 'metal_roof') {
                     class="sol-btn sol-btn--solar sol-btn--lg" 
                     style="width: 100%; max-width: 520px; font-size: 1.05rem; font-weight: 800; padding: 1rem 1.85rem; box-shadow: 0 6px 25px rgba(245, 158, 11, 0.45); display: flex; align-items: center; justify-content: center; gap: 0.65rem;"
                 >
-                    <span>🚀</span> Xác Nhận Phê Duyệt (Approved) & Chuyển Sang Lắp Đặt ➔
+                    <span>🚀</span> Xác Nhận Cấu Hình
                 </button>
 
                 <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: center;">
@@ -950,8 +950,8 @@ $roofTypeName = match ($calc['roof_type'] ?? 'metal_roof') {
 </div>
 
 <script>
-    // Tự động cuộn mượt mà đến phần mô phỏng nếu có hash #step-2-simulation
-    if (window.location.hash) {
+    // Tự động cuộn mượt mà đến phần mô phỏng nếu có hash #step-2-simulation và không có vị trí reload cần giữ
+    if (window.location.hash && !sessionStorage.getItem('solaris_scroll_pos')) {
         const target = document.querySelector(window.location.hash);
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
